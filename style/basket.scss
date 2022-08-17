@@ -1,0 +1,208 @@
+.divBasket{
+    display:inline;
+    position:fixed;
+    top: 10%;
+    width: 100%;
+    height: 90%;
+    background: #2c3a47;
+    color: #f1f1f1;
+    right: -100%;
+    transition: 0.8s;
+        *{
+            position: relative;
+            margin-left: 40vw;
+            margin-top: 1vw;
+        }
+        .divRadioBtn{
+            margin-left: -30%;
+        }
+        .adress{
+            margin-left: 0;
+        }
+        .divProduct{
+            left: 0;
+        }
+        input{
+            font-size: 2vw;
+            border-radius: 5px;
+        }
+        .userComment{
+            width: 45vw;
+            height: 10vw;
+            margin-left: 32vw;
+        }
+        input:hover, :focus{
+            outline: 0;
+            border: 2px solid #47998b;
+            transform: scale(1.1);
+            transition: 0.6s;
+        }
+        p{
+            font-size: 2vw;
+        }
+        .textUserComment{
+            margin-left: 33vw;
+        }
+        .divSubmitBtn{
+            margin-left: -3%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+}
+
+.basket.active{
+    background: #fff;
+    color: #2c3a47;
+}
+.basket.buy{
+    color: red;
+}
+
+.divBasket.active{
+    right: 0;
+    overflow-y: scroll;
+}
+
+.input input{
+    display: none;
+}
+
+label{
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+label::before,
+label::after {
+    content:"";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+label::before{
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #f1f1f1;
+    
+}
+
+label::after{
+    left: -7px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f1f1f1;
+    opacity: 0;
+}
+
+.input input:checked ~ label::after{
+    opacity: 1;
+    animation: scaleInOut .25s;
+}
+
+@keyframes scaleInOut {
+    0% {
+        transform: translateY(-50%) scale(1.5);
+    }
+    50%{
+        transform:  translateY(-50%) scale(0.5);
+    }
+    100%{
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+.submitBtn {
+    padding: 18px 30px;
+    font-size: 2vw;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #3b3b3b;
+    border-radius: 5px;
+    min-width: 200px;
+    color: #f1f1f1;
+    z-index: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 5px;
+    transition: all 0.3s;
+}
+
+.submitBtn::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -50px;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #ffffff71, transparent);
+    transition: all 1s;
+    z-index: -1;
+    transform: translateX(-12vw)
+    skew(-20deg);
+}
+
+.submitBtn:hover::before{
+    transform: translateX(30px) skew(-20deg);
+}
+.submitBtn:hover {
+    background: #477299;
+}
+.divProduct{
+    margin: 0;
+    display:flex;
+    flex-wrap: wrap;
+        *{
+            margin: 0;
+        }
+        .cardProduct{
+            display:flex;
+            margin-top: 2vw;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 15vw;
+            height: 20vw;
+            border: 2px solid #477299;
+            border-radius: 10px;
+        }
+        .cardName{
+            margin-inline: auto;
+            align-items: center;
+            justify-content: center;
+            height: 1.5vw;
+
+        }
+        .cardPrice{
+            margin-inline: auto;
+            align-items: center;
+            justify-content: center;
+            height: 1.5vw;
+            font-size: 1.4vw;
+            margin-top: 11vw;
+            margin-left: 1.5vw;
+        }
+        .cardAmount{
+            margin-inline: auto;
+            margin-top: 0.5vw;
+            align-items: center;
+            justify-content: center;
+            height: 1.5vw;
+            font-size: 1.4vw;
+        }
+        .cardPlus{
+            font-size: 2.4vw;
+            cursor: pointer;
+        }
+        .cardMinus{
+            font-size: 2.4vw;
+            cursor: pointer;
+        }
+}
+

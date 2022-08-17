@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.header{
+    background: #2c3a47;
+}
+
+.inner-width {
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    margin: auto;
+    color: #f1f1f1;
+}
+
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    margin-left: -10% ;
+    background: #2c3a47;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.basket {
+    width: 50px;
+    height: 50px;
+    margin-right: -10%;
+    background: #2c3a47;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.basket.active{
+    background: #f1f1f1;
+    color: red;
+}
+
+.basket i {
+    font-size: 40px;
+    margin: 2px;
+}
+.menu-icon i{
+    font-size: 40px;
+    margin: 5px;
+}
+
+.navigation-menu {
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    background: #2c3a47;
+    top: 10%;
+    left: -100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s;
+}
+
+.navigation-menu nav {
+    display: grid;
+}
+
+.navigation-menu ul {
+    overflow: hidden;
+    line-height: 100px;
+}
+
+.navigation-menu ul {
+    color: #fff;
+    font-size: 3vw;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    transform: translateY(40px);
+    cursor: pointer;
+}
+
+.navigation-menu ul::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 15px;
+    background: #7a49ff;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.2s linear;
+}
+
+.navigation-menu ul:hover::before {
+    width: 100%;
+}
+
+.menu-icon.active {
+    background: #f1f1f1;
+    color: #2c3a47;
+}
+
+.navigation-menu.active {
+    left: 0;
+}
+
+.navigation-menu.active ul{
+    transform: translateY(0);
+    transition: 0.6s linear;
+}
+
+.navigation-menu.active ul:nth-child(1){
+    transition-delay: 0.2s;
+}
+
+.navigation-menu.active ul:nth-child(2){
+    transition-delay: 0.4s;
+}
+
+.navigation-menu.active ul:nth-child(3){
+    transition-delay: 0.6s;
+}
+
+.navigation-menu.active ul:nth-child(4){
+    transition-delay: 0.8s;
+}
+
+.navigation-menu.active ul:nth-child(5){
+    transition-delay: 1s;
+}
